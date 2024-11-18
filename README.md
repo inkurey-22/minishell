@@ -17,9 +17,9 @@ cargo run
 ## Currently done
 - "Classic" shell commands
 - cd
+- Env related commands
 
 ## TODO
-- Commands related to the environment
 - Pipes
 - Redirections
 - Git integration in the prompt (maybe)
