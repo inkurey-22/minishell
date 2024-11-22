@@ -7,7 +7,9 @@ pub fn run_cd(args: &[&str])
             eprintln!("cd: {}", e);
         }
     } else {
-        eprintln!("cd: missing argument");
+        if let Err(e) = env::set_current_dir(env::home_dir().unwrap()) {
+            eprintln!("cd: {}", e);
+        }
     }
 }
 
