@@ -1,4 +1,5 @@
 use std::env;
+use homedir::my_home;
 
 pub fn run_cd(args: &[&str])
 {
@@ -7,8 +8,14 @@ pub fn run_cd(args: &[&str])
             eprintln!("cd: {}", e);
         }
     } else {
-        if let Err(e) = env::set_current_dir(env::home_dir().unwrap()) {
-            eprintln!("cd: {}", e);
+        match my_home() {
+            Ok(Some(home_dir)) => {
+                if let Err(e) = env::set_current_dir(home_dir) {
+                    eprintln!("cd: {}", e);
+                }
+            }
+            Ok(None) => eprintln!("cd: could not find home directory"),
+            Err(e) => eprintln!("cd: {}", e),
         }
     }
 }
