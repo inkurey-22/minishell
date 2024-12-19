@@ -1,4 +1,4 @@
-# Rust Minishell
+# SHERRIS
 A simple shell written in rust to learn the language
 
 ## Requirements
@@ -7,7 +7,7 @@ A simple shell written in rust to learn the language
 ## Usage
 Clone the project :
 ```bash
-git clone https://github.com/inkurey-22/minishell.git
+git clone https://github.com/inkurey-22/sherris.git
 ```
 Then run it
 ```bash
